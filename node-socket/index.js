@@ -7,10 +7,6 @@ const io = require('socket.io')(http);
 // Store uploaded images for each room
 const roomImages = {};
 
-http.get('/', (req, res) => {
-  res.send('Hey this is my API running 🥳')
-})
-
 // Handle API route to receive an image
 io.of('/api').on('connection', (socket) => {
   console.log('User connected');
