@@ -1,8 +1,16 @@
 
 const express = require('express');
 const app = express();
+const cors = require('cors');
+app.use(cors());
+app.options('*', cors());
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
+
+io.use(cors());
+
+
+
 
 // Store uploaded images for each room
 const roomImages = {};
